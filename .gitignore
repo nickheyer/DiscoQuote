@@ -39,6 +39,10 @@ bld/
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
+# Virtual environment for Python 3.10
+venv/
+.vscode/
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
