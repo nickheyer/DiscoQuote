@@ -1,4 +1,4 @@
-import subsceneAPI
+import subscene
 import sys
 import os
 
@@ -13,16 +13,23 @@ def get_title():
     else:
         title = sys.argv[1]
     
-    
+
+def search(title):
+    sub_link = subscene.sel_title(name = title.replace(" ", "-"))
+    if sub_link: #If title exists in subscene
+        sub = subscene.sel_sub(page=sub_link, sub_count=1, name=title)
+        return sub
+    else:
+        raise Exception("Title not found")
 
 
-
-
+def download_sub(sub):
+    subscene.dl_sub(sub)
 
 def main():
     
-    
-    
+    s = search("Doctor Strange")
+    download_sub(s)
     
     return
 
